@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { PureComponent } from "react";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./assets/styles/app.scss";
+
+import { Home } from "./containers";
+import { GameFactory } from "./elements";
+
+export default class App extends PureComponent {
+  render() {
+    return (
+      <BrowserRouter>
+        <GameFactory>
+          <div className="app">
+            <Route exact path="/" component={Home} />
+            <Route render={() => <Redirect to="/" />} />
+          </div>
+        </GameFactory>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default App;
