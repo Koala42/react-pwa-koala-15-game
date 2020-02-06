@@ -16,6 +16,10 @@ export default class Game extends Component {
     }
   }
 
+  state = {
+    deferredPrompt: {}
+  };
+
   render() {
     return (
       <div>
@@ -23,9 +27,7 @@ export default class Game extends Component {
           <Button onClick={this.props.resetGame}>new game</Button>
           <Score moves={this.props.moves} seconds={this.props.seconds} />
         </GameScore>
-
         <Grid />
-
         <PlayPauseContainer>
           <Button type="big" onClick={this.props.pauseGame} disabled={this.props.gameState === gameState.GAME_IDLE}>
             {this.props.gameState === gameState.GAME_PAUSED ? "Play" : "Pause"}
