@@ -1,37 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button } from "../../elements";
+import useAddToHomescreenPrompt from "./useAddToHomescreenPrompt.ts";
 
-export class A2HS extends Component {
-  componentDidMount() {
-    window.addEventListener("beforeinstallprompt", event => {
-      // Stash the event so it can be triggered later.
-      this.setState({ deferredPrompt: event });
-      // Update UI notify the user they can add to home screen
-    });
+export default function ExampleComponent() {
+  const [prompt, promptToInstall] = useAddToHomescreenPrompt();
+  const [isVisible, setVisibleState] = React.useState(false);
+
+  const hide = () => setVisibleState(false);
+
+  React.useEffect(() => {
+    if (prompt) {
+      setVisibleState(true);
+    }
+  }, [prompt]);
+
+  // if (window.matchMedia("(display-mode: standalone)").matches) {
+  //   hide();
+  // }
+
+  if (!isVisible) {
+    return <div />;
   }
-  handleClick = () => {
-    window.addEventListener("beforeinstallprompt", event => {
-      this.state.deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      this.state.deferredPrompt.userChoice.then(choiceResult => {
-        if (choiceResult.outcome === "accepted") {
-          console.log("User accepted the A2HS prompt");
-        } else {
-          console.log("User dismissed the A2HS prompt");
-        }
-        this.setState({ deferredPrompt: null });
-      });
-    });
-  };
-  render() {
-    return (
-      <div className="buttonWrapper">
-        <Button className="A2HS" onClick={this.handleClick}>
-          Add to Home Screen
-        </Button>
-      </div>
-    );
-  }
+
+  return (
+    <div className="buttonWrapper" onClick={hide}>
+      <Button className="A2HS" onClick={promptToInstall}>
+        Add to homescreen
+      </Button>
+    </div>
+  );
 }
-
-export default A2HS;
