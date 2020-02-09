@@ -47,3 +47,17 @@ export const HeaderText = styled.div`
     }
   }
 `;
+
+export const LogoPlace = styled.div`
+    margin-top: 40px;
+  a{
+    color: #ffffff55;
+    text-decoration: none;
+    img {
+        float: right;
+        height: 50px;
+        opacity: .5;
+        margin-top: -15px;
+    }
+  }
+`;

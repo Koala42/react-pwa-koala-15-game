@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const GridContainer = styled.div`
-  margin: 5px 0;
+  margin: 15px 0;
   grid-template-columns: auto auto auto auto;
   display: grid;
   position: relative;
@@ -84,7 +84,7 @@ export const NumberCellContainer = styled.div`
   display: ${props => (props.number < 16 ? "flex" : "none")};
   border-radius: 10px;
   background: ${props =>
-    props.index === props.number ? "#E88A45" : "#6ac6b8"};
+    props.index === props.number ? "#4fe2c2" : "#2f1c8e"};
   cursor: pointer;
   position: relative;
   justify-content: center;
@@ -106,7 +106,7 @@ export const NumberCellContainer = styled.div`
   .ball-2 {
     position: absolute;
     background-color: ${props =>
-      props.index === props.number ? "  #CD583A" : "#499591"};
+      props.index === props.number ? "  #285e76" : "#000000dd"};
     opacity: 0.2;
     border-radius: 50%;
   }
@@ -124,7 +124,7 @@ export const NumberCellContainer = styled.div`
     right: 10px;
   }
   .shadow {
-    color: ${props => (props.index === props.number ? "  #CD583A" : "#499591")};
+    color: ${props => (props.index === props.number ? "  #285e7618" : "#285e7618")};
     font-size: 90px;
     margin-left: ${props =>
       props.number.toString().length === 2
@@ -137,7 +137,7 @@ export const NumberCellContainer = styled.div`
     margin-top: ${props => (props.number.toString().length === 2 ? -21 : -19)}px;
   }
   .number {
-    color: white;
+    color: ${props => (props.index === props.number ? "  #f3f6fd" : "#8bc2ff")};
     z-index: 99;
     position: absolute;
     top: -22px;

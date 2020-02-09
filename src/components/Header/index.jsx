@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <HeaderText>
-        <span></span> Gempuzzle
+        Gempuzzle
       </HeaderText>
     );
   }

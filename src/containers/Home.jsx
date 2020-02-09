@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { KeyBoardManagar } from "../hoc";
 
-import { Instruction, Header, Game } from "../components";
+import { Instruction, Header, Footer, Game } from "../components";
 import { Container, GameFactoryConsumer } from "../elements";
 
 const Home = ({ eventType }) => {
@@ -16,6 +16,7 @@ const Home = ({ eventType }) => {
               <Game eventType={eventType} {...values} {...methods} />
               <br />
               <Instruction />
+              <Footer />
             </Fragment>
           );
         }}

@@ -13,7 +13,7 @@ export const Button = styled.button`
   text-decoration: none;
   line-height: 60px;
   text-align: center;
-  background-color: ${color.gridTileColor};
+  background-color: ${color.buttonBgColor};
   color: ${props =>
     props.textColor ? props.textColor : color.primaryFontColor(0.5)};
   ${transition({ property: "color" })};
