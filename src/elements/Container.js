@@ -211,7 +211,9 @@ export const GameScore = styled.div`
   display: flex;
   justify-content: space-between;
   @media screen and (max-width: 520px) {
-    padding: 20px 15px 0 15px;
+    padding: 0px 15px 0 15px;
+    margin-top: -5px;
+    margin-bottom: -5px;
   }
 `;
 

@@ -50,6 +50,9 @@ export const HeaderText = styled.div`
 
 export const LogoPlace = styled.div`
     margin-top: 40px;
+    @media screen and (max-width: 520px) {
+      margin-top: 20px;
+    }
   a{
     color: #ffffff55;
     text-decoration: none;
@@ -58,6 +61,12 @@ export const LogoPlace = styled.div`
         height: 50px;
         opacity: .5;
         margin-top: -15px;
+        @media screen and (max-width: 520px) {
+          float: none;
+          margin: 0 auto;
+          height: 40px;
+          display: block;
+        }
     }
   }
 `;
