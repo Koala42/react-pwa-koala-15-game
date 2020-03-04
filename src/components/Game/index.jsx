@@ -4,6 +4,7 @@ import Score from "../Score";
 import Grid from "../Grid";
 
 import { gameState } from "../../utils";
+import { A2HS } from "..";
 export default class Game extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.eventType !== this.props.eventType) {
@@ -24,14 +25,17 @@ export default class Game extends Component {
     return (
       <div>
         <GameScore>
-          <Button onClick={this.props.resetGame}>new game</Button>
+          <A2HS></A2HS>
           <Score moves={this.props.moves} seconds={this.props.seconds} />
         </GameScore>
         <Grid />
         <PlayPauseContainer>
-          <Button type="big" onClick={this.props.pauseGame} disabled={this.props.gameState === gameState.GAME_IDLE}>
-            {this.props.gameState === gameState.GAME_PAUSED ? "Play" : "Pause"}
-          </Button>
+          <div className="playPauseContainer">
+            <Button onClick={this.props.pauseGame} disabled={this.props.gameState === gameState.GAME_IDLE}>
+              {this.props.gameState === gameState.GAME_PAUSED ? "Play" : "Pause"}
+            </Button>
+            <Button onClick={this.props.resetGame}>New game</Button>
+          </div>
         </PlayPauseContainer>
         <Modal on={this.props.gameState === gameState.GAME_OVER}>
           <ModalContainer>

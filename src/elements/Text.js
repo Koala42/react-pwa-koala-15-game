@@ -6,7 +6,6 @@ import Waves from "../assets/img/waves.gif";
 export const GameInstruction = styled.span`
   display: block;
   float: right;
-  margin-top: 18px;
   font-size: 22px;
   line-height: 30px;
   color: ${color.primaryFontColor(0.5)};
@@ -49,24 +48,25 @@ export const HeaderText = styled.div`
 `;
 
 export const LogoPlace = styled.div`
-    margin-top: 40px;
-    @media screen and (max-width: 520px) {
-      margin-top: 20px;
-    }
-  a{
+  margin-top: -10px;
+  margin-right: 10px;
+  @media screen and (max-width: 520px) {
+    margin-top: 20px;
+  }
+  a {
     color: #ffffff55;
     text-decoration: none;
     img {
-        float: right;
-        height: 50px;
-        opacity: .5;
-        margin-top: -15px;
-        @media screen and (max-width: 520px) {
-          float: none;
-          margin: 0 auto;
-          height: 40px;
-          display: block;
-        }
+      float: right;
+      height: 35px;
+      opacity: 0.5;
+      margin-top: -15px;
+      @media screen and (max-width: 520px) {
+        float: none;
+        margin: 0 auto;
+        height: 35px;
+        display: block;
+      }
     }
   }
 `;

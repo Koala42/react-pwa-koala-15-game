@@ -29,6 +29,19 @@ body {
     font-size: 12px;
   }
 }
+
+html,
+body {
+  @media screen and (max-width: $break-small) {
+    margin: 20px 0;
+    padding: 0 20px;
+    font-size: 12px;
+    overflow: hidden;
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .app {
   width: 100%;
   margin: 0;
@@ -53,4 +66,9 @@ body {
   background-color: transparent !important;
   border: 2px solid #3d2963 !important;
   box-shadow: 1px 1px #221736;
+}
+
+.playPauseContainer {
+  display: flex;
+  justify-content: space-between;
 }

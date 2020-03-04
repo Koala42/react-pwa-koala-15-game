@@ -6,7 +6,7 @@ const KeyButton = ({ currentKey, index }) => {
   return (
     <Icon
       name="key"
-      size={40}
+      size={25}
       color={currentKey === index ? color.primaryFontColor(1) : color.primaryFontColor(0.3)}
       rotate={(index - 1) * 90}
       move={currentKey === index ? `translate3d(0px,-5px,0)` : null}

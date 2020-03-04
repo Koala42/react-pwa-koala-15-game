@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../../elements";
 import useAddToHomescreenPrompt from "./useAddToHomescreenPrompt.ts";
 
-export default function ExampleComponent() {
+export default function A2HS() {
   const [prompt, promptToInstall] = useAddToHomescreenPrompt();
   const [isVisible, setVisibleState] = React.useState(false);
 
@@ -24,7 +24,7 @@ export default function ExampleComponent() {
 
   return (
     <div className="buttonWrapper" onClick={hide}>
-      <Button className="A2HS" onClick={promptToInstall}>
+      <Button type="big" style={{ padding: "0 10px" }} onClick={promptToInstall}>
         Add to homescreen
       </Button>
     </div>

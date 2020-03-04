@@ -14,8 +14,7 @@ export const Button = styled.button`
   line-height: 60px;
   text-align: center;
   background-color: ${color.buttonBgColor};
-  color: ${props =>
-    props.textColor ? props.textColor : color.primaryFontColor(0.5)};
+  color: ${props => (props.textColor ? props.textColor : color.primaryFontColor(0.5))};
   ${transition({ property: "color" })};
   ${transition({ property: "background-color" })};
   ${transition({ property: "opacity" })};

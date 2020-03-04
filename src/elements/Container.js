@@ -83,8 +83,7 @@ export const CellContainer = styled.div`
 export const NumberCellContainer = styled.div`
   display: ${props => (props.number < 16 ? "flex" : "none")};
   border-radius: 10px;
-  background: ${props =>
-    props.index === props.number ? "#4fe2c2" : "#2f1c8e"};
+  background: ${props => (props.index === props.number ? "#4fe2c2" : "#2f1c8e")};
   cursor: pointer;
   position: relative;
   justify-content: center;
@@ -105,8 +104,7 @@ export const NumberCellContainer = styled.div`
   .ball-1,
   .ball-2 {
     position: absolute;
-    background-color: ${props =>
-      props.index === props.number ? "  #285e76" : "#000000dd"};
+    background-color: ${props => (props.index === props.number ? "  #285e76" : "#000000dd")};
     opacity: 0.2;
     border-radius: 50%;
   }
@@ -127,13 +125,7 @@ export const NumberCellContainer = styled.div`
     color: ${props => (props.index === props.number ? "  #285e7618" : "#285e7618")};
     font-size: 90px;
     margin-left: ${props =>
-      props.number.toString().length === 2
-        ? props.number === 11
-          ? -16
-          : -6
-        : props.number === 1
-        ? -10
-        : 0}px;
+      props.number.toString().length === 2 ? (props.number === 11 ? -16 : -6) : props.number === 1 ? -10 : 0}px;
     margin-top: ${props => (props.number.toString().length === 2 ? -21 : -19)}px;
   }
   .number {
@@ -168,15 +160,8 @@ export const NumberCellContainer = styled.div`
     .shadow {
       font-size: 53px;
       margin-left: ${props =>
-        props.number.toString().length === 2
-          ? props.number === 11
-            ? -6
-            : -1
-          : props.number === 1
-          ? -7
-          : 0}px;
-      margin-top: ${props =>
-        props.number.toString().length === 2 ? -20 : -19}px;
+        props.number.toString().length === 2 ? (props.number === 11 ? -6 : -1) : props.number === 1 ? -7 : 0}px;
+      margin-top: ${props => (props.number.toString().length === 2 ? -20 : -19)}px;
     }
     .number {
       top: -14px;
@@ -254,8 +239,9 @@ export const ScoreContainer = styled.div`
     opacity: 0.5;
   }
   @media screen and (max-width: 520px) {
-    padding-left: 10px;
+    padding-left: 0px;
     border-radius: 5px;
+    margin-left: 0px;
 
     .move-container,
     .best-container,
@@ -271,13 +257,16 @@ export const ScoreContainer = styled.div`
       position: relative;
       display: inline-block;
       text-align: right;
-      padding: 8px 15px 0 10px;
+      margin-right: 5px;
+      margin-bottom: 15px;
       float: right;
-      width: 65px;
+      width: 25px;
     }
     .time {
-      width: 80px;
-      padding-right: 6px;
+      width: 40px;
+    }
+    .move {
+      margin-right: 15px;
     }
     .best {
       display: none;
